@@ -1,0 +1,101 @@
+# TLM_STRASSEN
+# ----------------
+
+# Street Names
+NAME=* {name '${NAME}'}
+
+# Motorways
+OBJEKTART=Autobahn [0x01 road_class=4 road_speed=7 resolution 15]
+
+# Trunk Roads
+OBJEKTART=Autostrasse [0x02 road_class=4 road_speed=5 resolution 18]
+
+# Primary Roads
+OBJEKTART=10m_Strasse [0x03 road_class=3 road_speed=4 resolution 17]
+OBJEKTART=8m_Strasse [0x03 road_class=3 road_speed=4 resolution 19]
+
+# Secondary Roads
+OBJEKTART=6m_Strasse [0x04 road_class=2 road_speed=3 resolution 20]
+
+# Tertiary Roads
+OBJEKTART=4m_Strasse [0x05 road_class=1 road_speed=3 resolution 20]
+
+# Unclassified Roads
+OBJEKTART=3m_Strasse [0x06 road_class=0 road_speed=3 resolution 21]
+
+# Tracks
+OBJEKTART=2m_Weg & BELAGSART=Hart [0x0A road_class=0 road_speed=1 resolution 22]
+OBJEKTART=2m_Weg & BELAGSART=Natur [0x0A road_class=0 road_speed=1 resolution 23]
+
+# Paths
+OBJEKTART=1m_Weg & VERKEHRSBESCHRAENKUNG=Fussweg [0x16 road_class=0 road_speed=0 resolution 23]
+OBJEKTART=1m_Weg [0x16 road_class=0 road_speed=0 resolution 23]
+
+# Ferries
+OBJEKTART=Faehre [0x1A road_class=3 road_speed=0 resolution 19]
+
+# Motorway Ramps
+OBJEKTART=Ausfahrt [0x09 road_class=4 road_speed=2 resolution 20]
+OBJEKTART=Einfahrt [0x09 road_class=4 road_speed=2 resolution 20]
+
+# Motorway Access Roads
+OBJEKTART=Zufahrt [0x08 road_class=3 road_speed=1 resolution 21]
+
+# Service Access Roads
+OBJEKTART=Dienstzufahrt [0x07 road_class=0 road_speed=0 resolution 23]
+
+# Climbing Paths
+OBJEKTART=Klettersteig [0x16 road_class=0 road_speed=0 resolution 23]
+
+# Marked Trails
+OBJEKTART=Markierte_Spur [0x16 road_class=0 road_speed=0 resolution 24]
+
+# Roundabouts
+OBJEKTART=6m_Strasse & KREISEL=Wahr { set junction=roundabout } [0x0C road_class=2 road_speed=2 resolution 24 continue]
+OBJEKTART=4m_Strasse & KREISEL=Wahr { set junction=roundabout } [0x0C road_class=1 road_speed=1 resolution 24 continue]
+OBJEKTART=3m_Strasse & KREISEL=Wahr { set junction=roundabout } [0x0C road_class=1 road_speed=1 resolution 21 continue]
+
+# Adjusting for Traffic Restrictions
+OBJEKTART=3m_Strasse & VERKEHRSBESCHRAENKUNG='Allgemeines Fahrverbot' [0x16 road_class=0 road_speed=0 resolution 23]
+
+# TLM_GEWAESSER
+# ----------------
+
+# Bisse Suone (Irrigation Canal)
+OBJEKTART=Bisse_Suone & STUFE >= 0 [0x1F resolution 21]
+OBJEKTART=Bisse_Suone & STUFE < 0 { set tunnel=yes } [0x1F resolution 21]
+
+# Druckleitung einfach (Single Pressure Pipe)
+OBJEKTART=Druckleitung_einfach & STUFE >= 0 [0x28 resolution 23]
+OBJEKTART=Druckleitung_einfach & STUFE < 0 { set tunnel=yes } [0x28 resolution 23]
+
+# Druckleitung mehrfach (Multiple Pressure Pipes)
+OBJEKTART=Druckleitung_mehrfach & STUFE >= 0 [0x28 resolution 23]
+OBJEKTART=Druckleitung_mehrfach & STUFE < 0 { set tunnel=yes } [0x28 resolution 23]
+
+# Druckstollen (Pressure Tunnel)
+OBJEKTART=Druckstollen { set tunnel=yes } [0x28 resolution 23]
+
+# Fliessgewaesser (Flowing Waterway)
+OBJEKTART=Fliessgewaesser & STUFE >= 0 [0x1F resolution 21]
+OBJEKTART=Fliessgewaesser & STUFE < 0 { set tunnel=yes } [0x1F resolution 21]
+
+# Trockenrinne (Intermittent Stream)
+OBJEKTART=Trockenrinne { set intermittent=yes } [0x26 resolution 22]
+
+# Seeachse (Lake Axis) - Optional
+OBJEKTART=Seeachse [0x1F resolution 22]
+
+# Waterfall
+VERLAUF=Wasserfall { set waterway=waterfall } [0x1F resolution 22]
+
+# Set tunnel or bridge based on STUFE
+STUFE < 0 { set tunnel=yes }
+STUFE > 0 { set bridge=yes }
+
+# General handling for underground waterways
+VERLAUF=unterirdisch_bestimmt { set tunnel=yes }
+VERLAUF=unterirdisch_unbestimmt { set tunnel=yes }
+
+# Lake Shoreline
+# OBJEKTART='See (Seeuferlinie)' [0x1F resolution 21]

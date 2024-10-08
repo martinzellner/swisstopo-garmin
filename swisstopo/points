@@ -1,0 +1,71 @@
+# Points style file for SwissTopo OBJEKTART with Garmin types and proper resolutions
+
+# Schools and educational institutions
+OBJEKTART=Schule [0x2c05 resolution 24]  # Schools visible at high detail
+OBJEKTART=Universitaet [0x2c05 resolution 24]  # Universities visible at high detail
+
+# Hospitals and healthcare facilities
+OBJEKTART=Krankenhaus [0x3002 resolution 22]  # Hospitals visible at mid detail
+OBJEKTART=Klinik [0x3002 resolution 22]  # Clinics visible at mid detail
+OBJEKTART=Arzt [0x3003 resolution 24]  # Individual doctors visible at high detail
+
+# Restaurants, cafes, and food-related amenities
+OBJEKTART=Restaurant [0x2f0b resolution 22]  # Restaurants visible at mid detail
+OBJEKTART=Cafe [0x2f0c resolution 22]  # Cafes visible at mid detail
+OBJEKTART=Schnellimbiss [0x2f0c resolution 22]  # Fast food visible at mid detail
+
+# Parking facilities
+OBJEKTART=Parkplatz [0x2f01 resolution 22]  # Parking lots visible at mid detail
+OBJEKTART=Tiefgarage [0x2f02 resolution 22]  # Underground parking visible at mid detail
+
+# Emergency services
+OBJEKTART=Feuerwache [0x2f05 resolution 22]  # Fire stations visible at mid detail
+OBJEKTART=Polizeistation [0x2f04 resolution 22]  # Police stations visible at mid detail
+
+# Fuel stations
+OBJEKTART=Tankstelle [0x2f03 resolution 22]  # Fuel stations visible at mid detail
+
+# Train and bus stations
+OBJEKTART=Bahnhof [0x2f08 resolution 22]  # Train stations visible at mid detail
+OBJEKTART=Bushaltestelle [0x2f17 resolution 22]  # Bus stops visible at mid detail
+
+# Other points of interest
+OBJEKTART=Bank [0x2f06 resolution 24]  # Banks visible at high detail
+OBJEKTART=Supermarkt [0x2e02 resolution 22]  # Supermarkets visible at mid detail
+OBJEKTART=Einkaufszentrum [0x2e04 resolution 22]  # Shopping centers visible at mid detail
+OBJEKTART=Postamt [0x2f05 resolution 22]  # Post offices visible at mid detail
+
+# Tourism-related points of interest
+OBJEKTART=Tourismusbuero [0x2f11 resolution 22]  # Tourist information centers visible at mid detail
+OBJEKTART=Sehenswuerdigkeit [0x2f12 resolution 22]  # Landmarks visible at mid detail
+
+# Entertainment facilities
+OBJEKTART=Kino [0x2d03 resolution 24]  # Cinemas visible at high detail
+OBJEKTART=Theater [0x2d01 resolution 24]  # Theaters visible at high detail
+
+# Accommodation (hotels, motels, etc.)
+OBJEKTART=Hotel [0x2b01 resolution 24]  # Hotels visible at high detail
+OBJEKTART=Jugendherberge [0x2b02 resolution 24]  # Youth hostels visible at high detail
+
+# Leisure and sports facilities
+OBJEKTART=Sportzentrum [0x2f17 resolution 22]  # Sports centers visible at mid detail
+OBJEKTART=Schwimmbad [0x2d09 resolution 22]  # Swimming pools visible at mid detail
+OBJEKTART=Golfplatz [0x2d05 resolution 22]  # Golf courses visible at mid detail
+
+# Religious buildings
+OBJEKTART=Kirche [0x2c0b resolution 22]  # Churches visible at mid detail
+OBJEKTART=Kapelle [0x2f1b resolution 22]  # Chapels visible at mid detail
+OBJEKTART=Friedhof [0x6403 resolution 22]  # Cemeteries visible at mid detail
+
+# Historical landmarks
+OBJEKTART=Denkmal [0x2c02 resolution 24]  # Monuments visible at high detail
+OBJEKTART=Schloss [0x2c02 resolution 24]  # Castles visible at high detail
+
+# Water-related points of interest (fountains, wells, etc.)
+OBJEKTART=Brunnen [0x6600 resolution 24]  # Fountains visible at high detail
+OBJEKTART=Quelle [0x6511 resolution 24]  # Springs visible at high detail
+OBJEKTART=Wasserfall [0x6508 resolution 24]  # Waterfalls visible at high detail
+
+# Miscellaneous
+OBJEKTART=Toiletten [0x2f0c resolution 24]  # Toilets visible at high detail
+OBJEKTART=Telefon [0x2f12 resolution 24]  # Telephones visible at high detail

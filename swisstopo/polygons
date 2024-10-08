@@ -1,0 +1,40 @@
+# Polygons style for SwissTopo OBJEKTART with Garmin types for water features
+
+# Large lakes (natural=water, water=lake) - visible at higher zoom levels
+OBJEKTART=See & area_size() > 100000 { name '${TextString|def:}' | '${ANNOTEXT|def:}' } [0x3c resolution 18]  # Large lakes
+
+# Medium lakes - visible at mid zoom levels
+OBJEKTART=See & area_size() <= 100000 & area_size() > 50000 { name '${TextString|def:}' | '${ANNOTEXT|def:}' } [0x3c resolution 20]
+
+# Small lakes - visible at more detailed zoom levels
+OBJEKTART=See & area_size() <= 50000 { name '${TextString|def:}' | '${ANNOTEXT|def:}' } [0x3c resolution 22]  # Small lakes
+
+# Rivers (larger) - visible at higher zoom levels
+OBJEKTART=Fluss { name '${TextString|def:}' | '${ANNOTEXT|def:}' } [0x46 resolution 20]
+
+# Small rivers and streams - visible at detailed zoom levels
+OBJEKTART=Bach { name '${TextString|def:}' | '${ANNOTEXT|def:}' } [0x46 resolution 22]
+
+# Canals - visible at mid zoom levels
+OBJEKTART=Kanal { name '${TextString|def:}' | '${ANNOTEXT|def:}' } [0x48 resolution 22]
+
+# Reservoirs and basins - visible at higher zoom levels
+OBJEKTART=Becken { name '${TextString|def:}' | '${ANNOTEXT|def:}' } [0x3f resolution 20]
+OBJEKTART=Stausee { name '${TextString|def:}' | '${ANNOTEXT|def:}' } [0x3f resolution 20]
+
+# Waterfalls - visible at mid zoom levels
+OBJEKTART=Wasserfall { name '${TextString|def:}' | '${ANNOTEXT|def:}' } [0x47 resolution 21]
+
+# Glaciers - visible at higher zoom levels
+OBJEKTART=Gletscher { name '${TextString|def:}' | '${ANNOTEXT|def:}' } [0x4d resolution 18]
+
+# Bays and sea inlets - visible at higher zoom levels
+OBJEKTART=Bucht { name '${TextString|def:}' | '${ANNOTEXT|def:}' } [0x3d resolution 18]
+
+# Seas - very large bodies of water visible at the highest zoom levels
+OBJEKTART=Meer { name '${TextString|def:}' | '${ANNOTEXT|def:}' } [0x32 resolution 10]
+
+# Mop up any remaining water areas
+waterway=* & waterway!=no & area!=no {add name='${waterway|subst:"_=> "}'} [0x3b resolution 22]
+
+OBJEKTART=Ort {add name='${name|subst:"_=> "}'} [0x03 resolution 19]
