@@ -14,6 +14,12 @@ We need to convert the GPKG file to an OSM file. We will use the `ogr2osm` tool 
 
 Once in OSM format, we can use the `mkgmap` tool to convert the OSM file to a Garmin map.
 
+    java -jar ../mkgmap-r4922/mkgmap.jar --gmapi --style-file=swisstopo SMV25_CHLV95LN02.osm
+
+This generates a `OSM map.gmap` package that can be viewed in Garmin BaseCamp. Before doing this, it needs to be copied into the Garmin BaseCamp Application (root access is required):
+
+    sudo cp -r OSM\ map.gmap /Applications/Garmin\ BaseCamp.app/Contents/Resources/
+
 This repository contains the mkgmap style file that contains the mapping of OSM tags (which in our case are SwissTopo tags) to Garmin tags.
 
 ## State of the project
